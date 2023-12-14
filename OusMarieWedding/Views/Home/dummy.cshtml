@@ -1,0 +1,697 @@
+﻿@model RsvpViewModel
+@{
+    ViewData["Title"] = "Home Page";
+    
+
+}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/preline.min.css" />
+ <link rel="stylesheet" href="/css/components-v2.css" />
+ <script src="/js/preline.js"></script>
+ 
+
+  <!-- Hero section -->
+  <div class="relative bg-gray-900">
+    <!-- Decorative image and overlay -->
+    <div aria-hidden="true" class="absolute inset-0 overflow-hidden">
+      <img src="https://mail.google.com/mail/u/0?ui=2&ik=a7cf19cf25&attid=0.1&permmsgid=msg-f:1783118973057559010&th=18bee942355ae9e2&view=att&disp=safe" alt="" class="w-full h-full object-center object-cover">
+    </div>
+    <div aria-hidden="true" class="absolute inset-0 bg-gray-900 opacity-50"></div>
+
+    <!-- header -->
+    <header class="relative z-10">
+      <nav aria-label="Top">
+        <!-- Top navigation -->
+        <div class="bg-gray-900">
+          <div class="max-w-7xl mx-auto h-10 px-4 flex items-center justify-between sm:px-6 lg:px-8">
+            <!-- Currency selector -->
+            <form>
+              <div>
+               
+              </div>
+            </form>
+
+            <partial name="_LoginPartial" />
+          </div>
+        </div>
+
+        <!-- Secondary navigation -->
+        <div class="backdrop-blur-md backdrop-filter bg-opacity-10 ">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div>
+              <div class="h-16 flex items-center justify-between">
+                <!-- Logo (lg+) -->
+                <div class="hidden lg:flex-1 lg:flex lg:items-center">
+                  <a href="#">
+                    <span class="sr-only">Workflow</span>
+                    <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark.svg?color=white" alt="">
+                  </a>
+                </div>
+
+                <div class="hidden h-full lg:flex">
+                  <!-- Flyout menus -->
+                  <div class="px-4 bottom-0 inset-x-0">
+                    <div class="h-full flex justify-center space-x-8">
+                      <div class="flex">
+                        <div class="relative flex">
+                          <a asp-controller="Home" asp-action="Index" class="relative z-10 flex items-center justify-center transition-colors ease-out duration-200 text-sm font-medium text-white" aria-expanded="false">
+                            Home
+                            <!-- Open: "bg-white", Closed: "" -->
+                            <span class="absolute -bottom-px inset-x-0 h-0.5 transition ease-out duration-200" aria-hidden="true"></span>
+                          </a>
+                        </div>
+
+                      </div>
+
+                      <div class="flex">
+                        <div class="relative flex">
+                          <a asp-controller="Contact" asp-action="Index" class="relative z-10 flex items-center justify-center transition-colors ease-out duration-200 text-sm font-medium text-white" aria-expanded="false">
+                            Contact
+                            <!-- Open: "bg-white", Closed: "" -->
+                            <span class="absolute -bottom-px inset-x-0 h-0.5 transition ease-out duration-200" aria-hidden="true"></span>
+                          </a>
+                        </div>
+
+                     
+                      </div>
+
+                      <a asp-controller="Admin" asp-action="Index" class="flex items-center text-sm font-medium text-white">Admin</a>
+
+                 
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Mobile menu and search (lg-) -->
+                <div class="flex-1 flex items-center lg:hidden">
+                  <!-- Mobile menu toggle, controls the 'mobileMenuOpen' state. -->
+                  <button id="mobile-btn" type="button" class="-ml-2 p-2 text-white">
+                    <span class="sr-only">Open menu</span>
+                    <!-- Heroicon name: outline/menu -->
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                  </button>
+
+
+                  <!-- Search -->
+                  <a href="#" class="ml-2 p-2 text-white">
+                    <span class="sr-only">Search</span>
+                    <!-- Heroicon name: outline/search -->
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                  </a>
+                </div>
+
+                <!-- Logo (lg-) -->
+                <a href="#" class="lg:hidden">
+                  <span class="sr-only">Workflow</span>
+                  <img src="https://tailwindui.com/img/logos/workflow-mark.svg?color=white" alt="" class="h-8 w-auto">
+                </a>
+
+                <div class="flex-1 flex items-center justify-end">
+                  <a href="#" class="hidden text-sm font-medium text-white lg:block"> Search </a>
+
+                  <div class="flex items-center lg:ml-8">
+                    <!-- Help -->
+                    <a href="#" class="p-2 text-white lg:hidden">
+                      <span class="sr-only">Help</span>
+                      <!-- Heroicon name: outline/question-mark-circle -->
+                      <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </a>
+                    <a href="#" class="hidden text-sm font-medium text-white lg:block">Help</a>
+
+                    <!-- Cart -->
+                    <div class="ml-4 flow-root lg:ml-8">
+                      <a href="#" class="group -m-2 p-2 flex items-center">
+                        <!-- Heroicon name: outline/shopping-bag -->
+                        <svg class="flex-shrink-0 h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                        </svg>
+                        <span class="ml-2 text-sm font-medium text-white">0</span>
+                        <span class="sr-only">items in cart, view bag</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+     
+    
+          <!-- Secondary navigation -->
+         
+           <div class=" hidden" id="mobile-menu">
+    <div class="space-y-1 px-2 pb-3 pt-2">
+      <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+      <a  asp-controller="Home" asp-action="Index" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium"  aria-current="page"  >Home</a>
+      <a  asp-controller="Contact" asp-action="Index" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium" >Contact</a>
+      <a  asp-controller="Admin" asp-action="Index" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Admin</a>
+     
+    </div>
+  </div>
+
+       
+      </nav>
+    </header>
+
+
+        <!-- header -->
+    <div class="relative max-w-3xl mx-auto py-32 px-6 flex flex-col items-center text-center sm:py-64 lg:px-0">
+      <h1 class="text-7xl font-extrabold tracking-tight text-white lg:text-7xl " style="font-family: 'Caveat', cursive; font-weight:Bold 700; font-size:95px;">Mariama & Ousman</h1>
+      <p class="mt-4 text-xl text-white">5th January 2024..</p>
+      
+       <div class="mt-10 flex items-center justify-center gap-x-6">
+          <button type="button"  class="inline-block  border border-transparent rounded-md py-3 px-8 text-base font-medium bg-indigo-600 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Make RSVP</button>
+          <button type="button" data-hs-overlay="#hs-bg-gray-on-hover-cards" class="inline-block bg-white border border-transparent rounded-md py-3 px-8 text-base font-medium text-gray-900 hover:bg-gray-100">Location <span aria-hidden="true">→</span></button>
+    
+     </div>
+    </div>
+  </div>
+
+   
+
+<div class="" role="dialog" aria-modal="true">
+    <!--
+      Off-canvas menu overlay, show/hide based on off-canvas menu state.
+
+      Entering: "transition-opacity ease-linear duration-300"
+        From: "opacity-0"
+        To: "opacity-100"
+      Leaving: "transition-opacity ease-linear duration-300"
+        From: "opacity-100"
+        To: "opacity-0"
+    -->
+    <div class="fixed inset-0 bg-black bg-opacity-0" aria-hidden="true"></div>
+
+    <!--
+      Off-canvas menu, show/hide based on off-canvas menu state.
+
+      Entering: "transition ease-in-out duration-300 transform"
+        From: "-translate-x-full"
+        To: "translate-x-0"
+      Leaving: "transition ease-in-out duration-300 transform"
+        From: "translate-x-0"
+        To: "-translate-x-full"
+    -->
+   
+  </div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+
+<!-- speakers -->
+<div class="bg-gray-900">
+  <div class="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
+    <div class="space-y-12">
+      <div class="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
+        <h2 class="text-3xl font-extrabold text-white tracking-tight sm:text-4xl">Meet our speakers</h2>
+        <p class="text-xl text-gray-300">Ornare sagittis, suspendisse in hendrerit quis. Sed dui aliquet lectus sit pretium egestas vel mattis neque.</p>
+      </div>
+
+
+
+                 @if(Model.Speakers == null || Model.Speakers.Count() < 1)
+                            {
+                                <ul role="list" class="space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-3 lg:gap-8">
+        <li class="py-10 px-6 bg-gray-800 text-center rounded-lg xl:px-10 xl:text-left">
+          <div class="space-y-6 xl:space-y-10">
+            <img class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56" src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80" alt="">
+            <div class="space-y-2  text-center">
+              <div class="font-medium text-lg leading-6 space-y-1 ">
+                <h3 class="text-white">Leonard Krasner</h3>
+                <p class="text-indigo-400">Senior Designer</p>
+              </div>
+
+         
+
+             
+            </div>
+          </div>
+        </li>
+
+        <li class="py-10 px-6 bg-gray-800 text-center rounded-lg xl:px-10 xl:text-left">
+          <div class="space-y-6 xl:space-y-10">
+            <img class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56" src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80" alt="">
+            <div class="space-y-2  text-center">
+              <div class="font-medium text-lg leading-6 space-y-1 ">
+                <h3 class="text-white">Leonard Krasner</h3>
+                <p class="text-indigo-400">Senior Designer</p>
+              </div>
+
+         
+
+             
+            </div>
+          </div>
+        </li>
+
+
+        <li class="py-10 px-6 bg-gray-800 text-center rounded-lg xl:px-10 xl:text-left">
+          <div class="space-y-6 xl:space-y-10">
+            <img class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56" src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80" alt="">
+            <div class="space-y-2  text-center">
+              <div class="font-medium text-lg leading-6 space-y-1 ">
+                <h3 class="text-white">Leonard Krasner</h3>
+                <p class="text-indigo-400">Senior Designer</p>
+              </div>
+
+         
+
+             
+            </div>
+          </div>
+        </li>
+
+
+
+        <li class="py-10 px-6 bg-gray-800 text-center rounded-lg xl:px-10 xl:text-left">
+          <div class="space-y-6 xl:space-y-10">
+            <img class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56" src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80" alt="">
+            <div class="space-y-2  text-center">
+              <div class="font-medium text-lg leading-6 space-y-1 ">
+                <h3 class="text-white">Leonard Krasner</h3>
+                <p class="text-indigo-400">Senior Designer</p>
+              </div>
+
+         
+
+             
+            </div>
+          </div>
+        </li>
+
+
+
+
+
+
+
+        <!-- More people... -->
+      </ul>
+                            }
+
+            @if(Model.Speakers != null)
+            {
+                    <ul role="list" class="space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-3 lg:gap-8">
+                @foreach (var item in Model.Speakers)
+             {
+                 
+                   <li class="py-10 px-6 bg-gray-800 text-center rounded-lg xl:px-10 xl:text-left">
+          <div class="space-y-6 xl:space-y-10">
+            <img class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56" src="@item.ImageUrl" alt="">
+            <div class="space-y-2  text-center">
+              <div class="font-medium text-lg leading-6 space-y-1 ">
+                <h3 class="text-white">@item.FirstName @item.LastName</h3>
+                <p class="text-indigo-400">@item.Position</p>
+              </div>
+
+         
+
+             
+            </div>
+          </div>
+        </li>
+
+
+
+
+             }
+             </ul>
+            }
+            
+
+
+
+
+
+
+
+     
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="bg-white pt-16 lg:py-24">
+  <div class="pb-16 bg-indigo-600 lg:pb-0 lg:z-10 lg:relative">
+    <div class="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-3 lg:gap-8">
+      <div class="relative lg:-my-8">
+        <div aria-hidden="true" class="absolute inset-x-0 top-0 h-1/2 bg-white lg:hidden"></div>
+        <div class="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:p-0 lg:h-full">
+          <div class="aspect-w-10 aspect-h-6 rounded-xl shadow-xl overflow-hidden sm:aspect-w-16 sm:aspect-h-7 lg:aspect-none lg:h-full">
+            <img class="object-cover lg:h-full lg:w-full" src="https://images.unsplash.com/photo-1520333789090-1afc82db536a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2102&q=80" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="mt-12 lg:m-0 lg:col-span-2 lg:pl-8">
+        <div class="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:px-0 lg:py-20 lg:max-w-none">
+          <blockquote>
+            <div>
+              <svg class="h-12 w-12 text-white opacity-25" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+              </svg>
+              <p class="mt-6 text-2xl font-medium text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed urna nulla vitae laoreet augue. Amet feugiat est integer dolor auctor adipiscing nunc urna, sit.</p>
+            </div>
+            <footer class="mt-6">
+              <p class="text-base font-medium text-white">Judith Black</p>
+              <p class="text-base font-medium text-indigo-100">CEO at PureInsights</p>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="relative overflow-hidden bg-white">
+  <div class="pb-80 pt-16 sm:pb-40 sm:pt-24 lg:pb-48 lg:pt-40">
+    <div class="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
+      <div class="sm:max-w-lg">
+        <h1 class="text-3xl text-gray-800 font-bold md:text-4xl md:leading-tight lg:text-5xl lg:leading-tight dark:text-gray-200">Laura Hall and George Brown</h1>
+        <p class="mt-4 text-xl text-gray-500">Together with their families cordially invite you to 
+their wedding </p>
+ <p class="mt-4 text-xl text-gray-500">at Pendleton Hall
+on Saturday 20th May 2023 
+at 4.30pm</p>
+ <p class="mt-4 text-xl text-gray-500">The ceremony is followed by the 
+Wedding Breakfast and evening 
+celebrations until late</p>
+      </div>
+      <div>
+        <div class="mt-10">
+          <!-- Decorative image grid -->
+          <div aria-hidden="true" class="pointer-events-none lg:absolute lg:inset-y-0 lg:mx-auto lg:w-full lg:max-w-7xl">
+            <div class="absolute transform sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8">
+              <div class="flex items-center space-x-6 lg:space-x-8">
+                <div class="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
+                  <div class="h-64 w-44 overflow-hidden rounded-lg sm:opacity-0 lg:opacity-100">
+                    <img src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-01.jpg" alt="" class="h-full w-full object-cover object-center">
+                  </div>
+                  <div class="h-64 w-44 overflow-hidden rounded-lg">
+                    <img src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-02.jpg" alt="" class="h-full w-full object-cover object-center">
+                  </div>
+                </div>
+                <div class="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
+                  <div class="h-64 w-44 overflow-hidden rounded-lg">
+                    <img src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-03.jpg" alt="" class="h-full w-full object-cover object-center">
+                  </div>
+                  <div class="h-64 w-44 overflow-hidden rounded-lg">
+                    <img src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-04.jpg" alt="" class="h-full w-full object-cover object-center">
+                  </div>
+                  <div class="h-64 w-44 overflow-hidden rounded-lg">
+                    <img src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-05.jpg" alt="" class="h-full w-full object-cover object-center">
+                  </div>
+                </div>
+                <div class="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
+                  <div class="h-64 w-44 overflow-hidden rounded-lg">
+                    <img src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-06.jpg" alt="" class="h-full w-full object-cover object-center">
+                  </div>
+                  <div class="h-64 w-44 overflow-hidden rounded-lg">
+                    <img src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-07.jpg" alt="" class="h-full w-full object-cover object-center">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a href="#" class="inline-block rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700">Shop Collection</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- CTA section -->
+<div class="relative mt-24 sm:mt-32 sm:py-16">
+    <div aria-hidden="true" class="hidden sm:block">
+        <div class="absolute inset-y-0 left-0 w-1/2 bg-gray-50 rounded-r-3xl"></div>
+        <svg class="absolute top-8 left-1/2 -ml-3" width="404" height="392" fill="none" viewBox="0 0 404 392">
+            <defs>
+                <pattern id="8228f071-bcee-4ec8-905a-2a059a2cc4fb" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+                </pattern>
+            </defs>
+            <rect width="404" height="392" fill="url(#8228f071-bcee-4ec8-905a-2a059a2cc4fb)" />
+        </svg>
+    </div>
+    <div class="mx-auto max-w-md px-4 sm:max-w-7xl sm:px-6 lg:max-w-7xl lg:px-8">
+        <div class="relative rounded-2xl px-6 py-10 bg-rose-500 overflow-hidden shadow-xl sm:px-12 sm:py-20">
+            <div class="absolute inset-0">
+            <img class="w-full h-full object-cover" src="https://mail.google.com/mail/u/0?ui=2&ik=a7cf19cf25&attid=0.1&permmsgid=msg-f:1783118973057559010&th=18bee942355ae9e2&view=att&disp=safe" alt="">
+            <div class="absolute inset-0  mix-blend-multiply" aria-hidden="true"></div>
+        </div>
+            
+            <div class="relative">
+                <div class="sm:text-center">
+                    <h2 class="text-3xl font-extrabold text-white tracking-tight sm:text-4xl">Get notified when we&rsquo;re launching.</h2>
+                    <p class="mt-6 mx-auto max-w-2xl text-lg text-rose-100">Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum urna sed consectetur neque tristique pellentesque.</p>
+                </div>
+
+                 <div class="mt-10 flex items-center justify-center gap-x-6">
+                                 <button  data-hs-overlay="#hs-bg-gray-on-hover-cards" type="button" class="block  rounded-md border border-transparent px-5 py-3 bg-gray-900 text-base font-medium text-white shadow hover:bg-black focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-rose-500 sm:px-10">Notify me</button>
+      </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+ <form asp-controller="Reservations" asp-action="Create" method="post">
+       <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<!-- Modal -->
+<div id="hs-modal-upgrade-to-pro" class="hs-overlay hidden w-full h-full fixed top-0 start-0 z-[60] overflow-x-hidden overflow-y-auto">
+  <div class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto">
+    <div class="bg-white border border-gray-200 rounded-xl shadow-sm pointer-events-auto dark:bg-gray-800 dark:border-gray-700">
+      <div class="p-4 sm:p-7">
+        <div class="text-center">
+          <h2 class="block text-xl sm:text-2xl font-semibold text-gray-800 dark:text-gray-200">Make a RSVP</h2>
+          <div class="max-w-sm mx-auto">
+            <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+              "Compare to" Price, Bulk Discount Pricing, Inventory Tracking
+              <a class="text-blue-600 decoration-2 hover:underline font-medium" href="../examples/html/modal-signup.html">
+                Sign up here
+              </a>
+            </p>
+          </div>
+          
+        </div>
+
+
+        
+        <div class="mt-8 sm:mt-10 divide-y divide-gray-200 dark:divide-gray-700">
+          <!-- Icon -->
+          
+                <div class="grid gap-4 mb-4 sm:grid-cols-2">
+                    <div>
+                        <label asp-for="FirstName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First Name</label>
+                        <input type="text" asp-for="FirstName" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type product name" required="">
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+                    <div>
+                        <label asp-for="LastName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First Name</label>
+                        <input type="text" asp-for="LastName" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type product name" required="">
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                    <div>
+                        <label asp-for="PhoneNumber" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone Number</label>
+                        <input type="number" asp-for="PhoneNumber"class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="$2999" required="">
+                     <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                    <div>
+                        <label asp-for="PlusOneId" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Category</label>
+                        <select asp-for="PlusOneId" asp-items="ViewBag.PlusOneId" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                            
+                        </select>
+                    </div>
+                   
+                </div>
+               
+            
+          <!-- End Icon -->
+
+        
+          <!-- End Icon -->
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="flex justify-end items-center gap-x-2 p-4 sm:px-7 border-t dark:border-gray-700">
+        <button type="button" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" data-hs-overlay="#hs-notifications">
+          Cancel
+        </button>
+        <button class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" type="submit">
+          Submit
+        </button>
+      </div>
+      
+      <!-- End Footer -->
+    </div>
+  </div>
+</div>
+<!-- End Modal -->
+
+</form>
+
+
+
+
+
+
+
+
+<!-- location modal  toggle -->
+
+
+
+
+<div id="hs-bg-gray-on-hover-cards" class="hs-overlay hidden w-full h-full fixed top-0 left-0 z-[60] overflow-x-hidden overflow-y-auto">
+  <div class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-5 opacity-0 ease-out transition-all lg:max-w-4xl lg:w-full m-6 lg:mx-auto">
+    <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-gray-700">
+     
+
+      <div class="p-4 overflow-y-auto">
+        <div class="sm:divide-y divide-gray-200 dark:divide-gray-700">
+        
+
+          <div class="py-1 sm:py-3">
+            
+
+            <!-- Grid -->
+            <div class="h-auto max-w-full rounded-lg" style="">
+              <!-- Card -->
+             
+
+
+              <!-- End Card -->
+
+              <!-- Card -->
+              
+              <div style="text-decoration:none; overflow:hidden;max-width:100%;width:100%;height:400px"><div id="my-map-canvas" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=13.441283852451324,+-16.717395958662667&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><a class="code-for-google-map" href="https://www.bootstrapskins.com/themes" id="get-data-for-embed-map">premium bootstrap themes</a><style>#my-map-canvas img{max-width:none!important;background:none!important;font-size: inherit;font-weight:inherit;}</style></div>
+              <!-- Card -->
+         
+              <!-- End Card -->
+            </div>
+            <!-- End Grid -->
+
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-end items-center gap-x-2 py-3 px-4 border-t dark:border-gray-700">
+        <a class="inline-flex items-center gap-x-1.5 text-sm text-blue-600 decoration-2 hover:underline font-medium">
+          OusMarieWedding location
+          <svg class="w-2.5 h-2.5" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M5.27921 2L10.9257 7.64645C11.1209 7.84171 11.1209 8.15829 10.9257 8.35355L5.27921 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- location modal  toggle -->
+
+<!-- success message -->
+
+
+
+    <!-- success message -->
+
+
+
+   @* <script src="/js/Mobilemenu.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>*@

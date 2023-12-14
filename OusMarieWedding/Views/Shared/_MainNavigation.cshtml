@@ -1,0 +1,127 @@
+﻿
+
+
+@*  <script src="/js/AdminMainNav.js"></script>
+  <script src="/js/preline.js"></script>*@
+
+ 
+  
+<!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a  class="brand-link text-center">
+      
+      <span class="brand-text font-weight-light">OusMarie Wedding Admin</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        
+        <div class="info">
+          <a href="#" class="d-block">Hello @User.Identity.Name!</a>
+        </div>
+      </div>
+
+     
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+
+      
+          <ul class="space-y-1.5">
+        <li>
+          <a asp-controller="Reservations" asp-action="Index" class="flex items-center gap-x-3 py-2 px-2.5 bg-gray-700 text-sm text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-gray-600" >
+            <svg class="flex-shrink-0 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          
+            Reservations
+          </a>
+        </li>
+
+         
+        
+
+
+      </ul>
+
+
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <script>
+      // Get the menu button and the menu element
+const Btn = document.getElementById('users-accordion-btn');
+const Menu = document.getElementById('users-accordion-child-menu');
+
+// Add a click event listener to the button
+Btn.addEventListener('click', () => {
+    // Toggle the visibility of the menu element
+   Menu.classList.toggle('hidden');
+});
+  </script>
+
+
+   <script>
+      // Get the menu button and the menu element
+const ProductsBtn = document.getElementById('Products-accordion-btn');
+const ProdsuctsMenu = document.getElementById('Products-accordion-child');
+
+// Add a click event listener to the button
+ProductsBtn.addEventListener('click', () => {
+    // Toggle the visibility of the menu element
+   ProdsuctsMenu.classList.toggle('hidden');
+});
+  </script>
+
+     <script>
+      // Get the menu button and the menu element
+const AccountsBtn = document.getElementById('account-accordion-btn');
+const AccountsMenu = document.getElementById('account-accordion-child');
+
+// Add a click event listener to the button
+AccountsBtn.addEventListener('click', () => {
+    // Toggle the visibility of the menu element
+   AccountsMenu.classList.toggle('hidden');
+});
+  </script>
+
+       <script>
+      // Get the menu button and the menu element
+const PAgesBtn = document.getElementById('Pages-accordion-btn');
+const PagesMenu = document.getElementById('Pages-accordion-child');
+
+// Add a click event listener to the button
+PAgesBtn.addEventListener('click', () => {
+    // Toggle the visibility of the menu element
+   PagesMenu.classList.toggle('hidden');
+});
+  </script>
+
+
+    <script>
+      // Get the menu button and the menu element
+const AuthentBtn = document.getElementById('Authentication-accordion-btn');
+const AuthentMenu = document.getElementById('Authentication-accordion-child');
+
+// Add a click event listener to the button
+AuthentBtn.addEventListener('click', () => {
+    // Toggle the visibility of the menu element
+   AuthentMenu.classList.toggle('hidden');
+});
+  </script>
+
+       <script>
+      // Get the menu button and the menu element
+const ProjectsBtn = document.getElementById('projects-accordion-btn');
+const ProjectsMenu = document.getElementById('projects-accordion-child');
+
+// Add a click event listener to the button
+ProjectsBtn.addEventListener('click', () => {
+    // Toggle the visibility of the menu element
+   ProjectsMenu.classList.toggle('hidden');
+});
+  </script>

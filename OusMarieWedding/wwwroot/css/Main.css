@@ -1,0 +1,63 @@
+﻿@media (min-width: 426px) {
+    #div1 {
+        display: none;
+    }
+}
+@media (max-width: 426px) {
+    #div2 {
+        display: none;
+    }
+}
+
+
+
+@media (min-width: 426px) {
+    #div11 {
+        display: none;
+    }
+}
+
+@media (max-width: 426px) {
+    #div12 {
+        display: none;
+    }
+}
+
+
+@media (min-width: 426px) {
+    #div31 {
+        display: none;
+    }
+}
+
+@media (max-width: 426px) {
+    #div32 {
+        display: none;
+    }
+}
+
+
+
+@media (min-width: 426px) {
+    #div41 {
+        display: none;
+    }
+}
+
+@media (max-width: 426px) {
+    #div42 {
+        display: none;
+    }
+}
+
+@media (min-width: 426px) {
+    #div51 {
+        display: none;
+    }
+}
+
+@media (max-width: 426px) {
+    #div52 {
+        display: none;
+    }
+}

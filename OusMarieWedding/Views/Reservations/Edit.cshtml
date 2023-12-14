@@ -1,0 +1,115 @@
+﻿@model OusMarieWedding.Models.Reservations
+
+@{
+    ViewData["Title"] = "Edit Reservation";
+    Layout = "_AdminLayout";
+}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+
+ <link rel="stylesheet" href="/css/components-v2.css" />
+
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css" rel="stylesheet" />
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>    
+
+
+
+
+
+
+
+
+
+
+
+<section class="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5">
+    <div class="mx-auto max-w-screen-xl px-4 lg:px-12">
+                  <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+                        <div class="shadow sm:rounded-md sm:overflow-hidden">
+                            <div class="bg-white py-6 px-4 sm:p-6">
+                                <div>
+                                    <h2 id="payment-details-heading" class="text-lg leading-6 font-medium text-gray-900">Reservation Id : @Model.Id</h2>
+                                    @*<p class="mt-1 text-sm text-gray-500">Update your profile information. Please note that updating your information could affect your tax rates.</p>*@
+                                </div>
+
+                                <div class="mt-6 grid grid-cols-4 gap-6">
+
+                                   <div class="col-span-4 sm:col-span-2 mt-1">
+                                        <label  class="block text-sm font-medium text-gray-700" >First Name </label>
+                       
+                              <input  asp-for="FirstName"  class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-gray-900 focus:border-gray-900 sm:text-sm form-control form-control "  >
+                         
+                       <span asp-validation-for="FirstName" class="text-danger"></span>
+                                 
+                                    </div>
+
+                                 <div class="col-span-4 sm:col-span-2 mt-1">
+                                        <label asp-for="LastName" class="block text-sm font-medium text-gray-700"></label>
+                                        <input   asp-for="LastName" class="mt-1  border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-gray-900 focus:border-gray-900 sm:text-sm form-control" ></input>
+                                   <span asp-validation-for="LastName" class="text-danger"></span>
+                                    </div>
+                                 @*   <div class="col-span-4 sm:col-span-2 mt-1">
+                                        <label asp-for="Email" class="block text-sm font-medium text-gray-700"></label>
+                                         <input  asp-for="Email"  class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-gray-900 focus:border-gray-900 sm:text-sm form-control form-control "  >
+                         
+                       <span asp-validation-for="Email" class="text-danger"></span>
+                                    </div>*@
+                                      <div class="col-span-4 sm:col-span-2">
+                                        <label  class="block text-sm font-medium text-gray-700" >Phone Number </label>
+                       
+                              <input  asp-for="PhoneNumber"  class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-gray-900 focus:border-gray-900 sm:text-sm form-control form-control "  >
+                         
+                       <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                                 
+                                    </div>
+
+                                 
+                                   
+
+                                </div>
+                           
+                            <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                              
+                                <a  asp-action="Index"  class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-blue-gray-900 hover:bg-blue-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Back to List</a>
+                            <button  type="submit" class="bg-gray-800 border border-transparent rounded-md shadow-sm py-2 px-4 inline-flex justify-center text-sm font-medium text-white hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">Save</button>
+                        
+                        </div>
+                        </div>
+                    </form>
+                     </div>
+                </section>
+
+
+
+
+
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
+
+
+
+
+
+
+

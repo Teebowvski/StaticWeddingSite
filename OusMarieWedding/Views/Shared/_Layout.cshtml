@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - OusMarieWedding</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+ <script src="/js/preline.js"></script>
+ <link rel="stylesheet" href="/css/preline.min.css" />
+  <link rel="stylesheet" href="/css/components-v2.css" />
+
+</head>
+<body>
+  
+
+
+    <div class="container-fluid">
+        <main role="main" class="">
+            @RenderBody()
+        </main>
+    </div>
+
+  <!-- This example requires Tailwind CSS v2.0+ -->
+<footer class="relative overflow-hidden  before:absolute before:top-0 before:start-1/2 before:bg-[url('/Images/abstractCopy.jpg')] before:bg-no-repeat before:bg-top before:bg-cover before:w-full before:h-full before:-z-[1] before:transform before:-translate-x-1/2 dark:before:bg-[url('/Images/abstractCopy.jpg')]">
+  <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
+    
+  </div>
+</footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

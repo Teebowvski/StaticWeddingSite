@@ -1,0 +1,562 @@
+﻿@model RsvpViewModel
+@{
+    ViewData["Title"] = "Home Page";
+    
+
+}
+@*<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.0.0/mdb.min.css"
+  rel="stylesheet"
+/>*@
+
+<style>
+
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow&family=Libre+Baskerville&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+ <script src="/js/preline.js"></script>
+ <link rel="stylesheet" href="/css/preline.min.css" />
+  <link rel="stylesheet" href="/css/components-v2.css" />
+  <link rel="stylesheet" href="/css/Main.css" />
+  <style>
+      .hs-overlay-open {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  overflow: hidden;
+}
+  </style>
+
+  <!-- Hero section -->
+  <div class="relative bg-gray-900" style="height:650px;">
+    <!-- Decorative image and overlay -->
+    <div aria-hidden="true" class="absolute inset-0 overflow-hidden">
+      <img src="/Images/IMG_0126.JPG" alt="" class="w-full h-full object-center object-cover" style="height:140%;">
+    </div>
+    <div aria-hidden="true" class="absolute inset-0 bg-gray-900 opacity-50"></div>
+
+    <!-- header -->
+    <header class="relative z-10">
+      <nav aria-label="Top">
+        <!-- Top navigation -->
+      
+
+        <!-- Secondary navigation -->
+        <div class="backdrop-blur-md backdrop-filter bg-opacity-10 ">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div>
+              <div class="h-16 flex items-center justify-between">
+                <!-- Logo (lg+) -->
+                <div class="hidden lg:flex-1 lg:flex lg:items-center">
+                  <a asp-controller="Home" asp-action="Index">
+                    <span class="sr-only">Workflow</span>
+                    <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark.svg?color=white" alt="">
+                  </a>
+                </div>
+
+                <div class="hidden h-full lg:flex">
+                  <!-- Flyout menus -->
+                  <div class="px-4 bottom-0 inset-x-0">
+                    <div class="h-full flex justify-center space-x-8">
+                      <div class="flex">
+                        <div class="relative flex">
+                          <a asp-controller="Home" asp-action="Index" class="relative z-10 flex items-center justify-center transition-colors ease-out duration-200 text-sm font-medium text-white" aria-expanded="false">
+                            Home
+                            <!-- Open: "bg-white", Closed: "" -->
+                            <span class="absolute -bottom-px inset-x-0 h-0.5 transition ease-out duration-200" aria-hidden="true"></span>
+                          </a>
+                        </div>
+
+                      </div>
+
+                      @*<div class="flex">
+                        <div class="relative flex">
+                          <a asp-controller="Contact" asp-action="Index" class="relative z-10 flex items-center justify-center transition-colors ease-out duration-200 text-sm font-medium text-white" aria-expanded="false">
+                            Contact
+                            <!-- Open: "bg-white", Closed: "" -->
+                            <span class="absolute -bottom-px inset-x-0 h-0.5 transition ease-out duration-200" aria-hidden="true"></span>
+                          </a>
+                        </div>
+
+                     
+                      </div>*@
+                      @* @if (User.Identity.IsAuthenticated)
+                                        {
+                                            <a asp-controller="Admin" asp-action="Index" class="flex items-center text-sm font-medium text-white">Admin</a>
+                                        }*@
+
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Mobile menu and search (lg-) -->
+                <div class="">
+                  <!-- Mobile menu toggle, controls the 'mobileMenuOpen' state. -->
+                  @*<button id="mobile-btn" type="button" class="-ml-2 p-2 text-white">
+                    <span class="sr-only">Open menu</span>
+                    <!-- Heroicon name: outline/menu -->
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                  </button>*@
+
+
+                  <!-- Search -->
+                 
+                </div>
+
+                <!-- Logo (lg-) -->
+                <a asp-controller="Home" asp-action="Index" class="lg:hidden">
+                  <span class="sr-only">Workflow</span>
+                  <img src="https://tailwindui.com/img/logos/workflow-mark.svg?color=white" alt="" class="h-8 w-auto">
+                </a>
+
+                <div class=" mb-2 flex-1 flex items-center justify-end">
+                  
+
+                  <div class="flex items-center lg:ml-8">
+                    <!-- Help -->
+                    <button type="button" data-hs-overlay="#hs-modal-upgrade-to-pro" class="p-2 text-white lg:hidden">
+                      <span class="sr-only">Rsvp</span>
+                      <!-- Heroicon name: outline/question-mark-circle -->
+                     
+                    </button>
+                    <a target=”_blank” href="https://docs.google.com/forms/d/e/1FAIpQLSc4icEbOWB63OaACH6pxZCkXM62rxcupKCHFJVt5u2zuOUTRQ/viewform?usp=sf_link"  class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto">Rsvp</a>
+
+                    <!-- Cart -->
+                    <div class="ml-4 flow-root lg:ml-8">
+                      @*<a href="#" class="group -m-2 p-2 flex items-center">
+                        <!-- Heroicon name: outline/shopping-bag -->
+                        <svg class="flex-shrink-0 h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                        </svg>
+                        <span class="ml-2 text-sm font-medium text-white">0</span>
+                        <span class="sr-only">items in cart, view bag</span>
+                      </a>*@
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+     
+    
+          <!-- Secondary navigation -->
+         
+           <div class=" hidden" id="mobile-menu">
+    <div class="space-y-1 px-2 pb-3 pt-2">
+      <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+      <a  asp-controller="Home" asp-action="Index" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium"  aria-current="page"  >Home</a>
+      <a  asp-controller="Contact" asp-action="Index" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium" >Contact</a>
+      @* @if (User.Identity.IsAuthenticated)
+                    {
+      <a  asp-controller="Admin" asp-action="Index" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Admin</a>
+                    }*@
+    </div>
+  </div>
+
+       
+      </nav>
+    </header>
+
+
+        <!-- header -->
+    <div class="relative max-w-3xl mx-auto py-32 px-6 flex flex-col items-center text-center sm:py-64 lg:px-0">
+      <h1 class=" text-7xl font-normal tracking-tight text-white lg:text-7xl " style="font-family: 'Playfair Display', serif; font-size:5.5rem;">Ousman & Mariama</h1>
+       <div class=" flex items-center justify-center gap-x-6" style=" letter-spacing:2px;">
+          <button  class="mt-6 px-3 py-2 text-xs font-normal text-center text-white  rounded-lg hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-blue-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800" ><span style="letter-spacing:2px;font-family:'Hedvig Letters Serif', serif; font-size:15px;" >SAVE THE DATE </span> </button>
+      
+      
+     </div>
+      <p class="mt-5 text-xl text-white" style="font-family:'Hedvig Letters Serif', serif; letter-spacing:2px;" >05.01.24</p>
+    
+     <p class="mt-11 px-3 py-2 text-xs font-normal text-center text-white  rounded-lg hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-blue-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800" style="font-family: 'Roboto', sans-serif; font-size:14px;font-weight:100;letter-spacing:1px" >RSVP Below</p>
+      
+    </div>
+  </div>
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+
+ 
+
+
+
+
+
+
+
+
+<partial name="_secondSection" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Hero -->
+
+<partial name="_carousel" />
+
+<!-- End Hero -->
+
+
+
+
+
+
+  <partial name="_venueSection" />
+
+
+          
+
+
+
+
+
+
+
+<partial name="_rsvpSection" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<partial name="_videoSection" />
+
+
+
+
+
+
+
+
+
+
+ <form asp-controller="Reservations" asp-action="Create" method="post">
+       <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<!-- create rsvp Modal -->
+<div id="hs-modal-upgrade-to-pro" class="hs-overlay hidden w-full h-full fixed top-0 start-0 z-[60] overflow-x-hidden overflow-y-auto">
+  <div class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto">
+    <div class="bg-white border border-gray-200 rounded-xl shadow-sm pointer-events-auto dark:bg-gray-800 dark:border-gray-700">
+      <div class="p-4 sm:p-7">
+        <div class="text-center">
+          <h2 class="block text-xl sm:text-2xl font-semibold text-gray-800 dark:text-gray-200">Make a RSVP</h2>
+          <div class="max-w-sm mx-auto">
+           
+          </div>
+          
+        </div>
+
+
+        
+        <div class="mt-8 sm:mt-10 divide-y divide-gray-200 dark:divide-gray-700">
+          <!-- Icon -->
+          
+                <div class="grid gap-4 mb-4 sm:grid-cols-2">
+                    <div>
+                        <label asp-for="FirstName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First Name</label>
+                        <input type="text" asp-for="FirstName" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type first name" required="">
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+                    <div>
+                        <label asp-for="LastName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Last Name</label>
+                        <input type="text" asp-for="LastName" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type last name" required="">
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                    @* <div>
+                        <label asp-for="Email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+                         <input type="Email" asp-for="PhoneNumber"class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type email" required="">
+                     <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>*@
+                    <div>
+                        <label asp-for="PhoneNumber" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone Number</label>
+                        <input type="number" asp-for="PhoneNumber"class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Phone Number" required="">
+                     <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                   
+                   
+                </div>
+               
+            
+          <!-- End Icon -->
+
+        
+          <!-- End Icon -->
+        </div>
+      </div>
+
+     
+      <div class="flex justify-end items-center gap-x-2 p-4 sm:px-7 border-t dark:border-gray-700">
+       @* <button type="button" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" data-hs-overlay="#hs-notifications">
+          Cancel
+        </button>*@
+        <button class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" type="submit">
+          Submit
+        </button>
+      </div>
+      
+    
+    </div>
+  </div>
+</div>
+<!-- End Modal -->
+
+</form>
+
+
+
+<div id="hs-task-created-alert" class="hidden inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
+      <div>
+        <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100">
+          <!-- Heroicon name: outline/check -->
+          <svg class="h-6 w-6 text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <div class="mt-3 text-center sm:mt-5">
+          <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">Rsvp successfully created</h3>
+          <div class="mt-2">
+           
+          </div>
+        </div>
+      </div>
+      <div class="mt-5 sm:mt-6 sm:grid sm:grid-cols-2 sm:gap-3 sm:grid-flow-row-dense">
+        <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:col-start-2 sm:text-sm">Deactivate</button>
+        <button type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:col-start-1 sm:text-sm">Cancel</button>
+      </div>
+    </div>
+
+
+
+ 
+
+
+  
+<!-- location modal  toggle -->
+
+
+
+
+<div id="hs-bg-gray-on-hover-cards" class="hs-overlay hidden w-full h-full fixed top-0 start-0 z-[60] overflow-x-hidden overflow-y-auto pointer-events-none">
+  <div class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-5 opacity-0 ease-out transition-all lg:max-w-4xl lg:w-full m-6 lg:mx-auto">
+    <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-gray-700">
+     
+
+      <div class="p-4 overflow-y-auto">
+        <div class="sm:divide-y divide-gray-200 dark:divide-gray-700">
+        
+
+          <div class="py-1 sm:py-3">
+            
+
+            <!-- Grid -->
+            <div class="h-auto max-w-full rounded-lg" style="">
+              <!-- Card -->
+             
+
+
+              <!-- End Card -->
+
+              <!-- Card -->
+              
+              <div style="text-decoration:none; overflow:hidden;max-width:100%;width:100%;height:400px"><div id="my-map-canvas" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=13.441283852451324,+-16.717395958662667&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><a class="code-for-google-map" href="https://www.bootstrapskins.com/themes" id="get-data-for-embed-map">premium bootstrap themes</a><style>#my-map-canvas img{max-width:none!important;background:none!important;font-size: inherit;font-weight:inherit;}</style></div>
+              <!-- Card -->
+         
+              <!-- End Card -->
+            </div>
+            <!-- End Grid -->
+
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-end items-center gap-x-2 py-3 px-4 border-t dark:border-gray-700">
+        <a class="inline-flex items-center gap-x-1.5 text-sm text-blue-600 decoration-2 hover:underline font-medium">
+          OusMarieWedding location
+          <svg class="w-2.5 h-2.5" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M5.27921 2L10.9257 7.64645C11.1209 7.84171 11.1209 8.15829 10.9257 8.35355L5.27921 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+  @if (TempData["ReservationCreated"] != null)
+{
+    <!-- This example requires Tailwind CSS v2.0+ -->
+<div class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+  <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+    <!--
+      Background overlay, show/hide based on modal state.
+
+      Entering: "ease-out duration-300"
+        From: "opacity-0"
+        To: "opacity-100"
+      Leaving: "ease-in duration-200"
+        From: "opacity-100"
+        To: "opacity-0"
+    -->
+    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+
+    <!-- This element is to trick the browser into centering the modal contents. -->
+    <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+    <!--
+      Modal panel, show/hide based on modal state.
+
+      Entering: "ease-out duration-300"
+        From: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+        To: "opacity-100 translate-y-0 sm:scale-100"
+      Leaving: "ease-in duration-200"
+        From: "opacity-100 translate-y-0 sm:scale-100"
+        To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+    -->
+    <div class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6" style="margin-bottom:10rem;">
+      <div>
+         
+        <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100">
+
+          <!-- Heroicon name: outline/check -->
+          <svg class="h-6 w-6 text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <div class="mt-3 text-center sm:mt-5">
+          <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">Rsvp created successfully</h3>
+          <div class="mt-2">
+            <p class="text-sm text-gray-500">Your spot at the wedding is saved! See you there!.</p>
+        
+        </div>
+        </div>
+       
+      </div>
+      
+      <div class="mt-5 sm:mt-6 ">
+        <button id="success-modal-close-btn" type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:col-start-2 sm:text-sm">Confirm</button>
+      
+        
+    </div>
+    </div>
+  </div>
+</div>
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<picture>
+  <source srcset="/Images/justin1.jpg" media="(max-width: 600px)">
+  <source srcset="/Images/Facetune_16-04-2023-00-01-36edit.jpg" media="(min-pixel-density: 2x)">
+  <img src="/Images/Facetune_16-04-2023-00-01-36edit.jpg" alt="Image description">
+</picture>*@
+
+
+
+
+
+<script src="/js/Mobilemenu.js"></script>
+<script src="/js/hs-overlay/index.js"></script>
+<script src="/js/hs-overlay/plugin.js"></script>
+ <script src="/js/preline.js"></script>
+
+ <!-- MDB -->
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.0.0/mdb.umd.min.js"
+></script>

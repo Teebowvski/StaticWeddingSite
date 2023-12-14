@@ -1,0 +1,116 @@
+﻿@model List<UserRoleViewModel>
+
+@{
+    var roleId = ViewBag.roleId;
+    var name = ViewBag.RoleId; 
+}
+
+@{
+    ViewData["Title"] = "Add/Remove User";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+
+<form method="post">
+
+    <section class="bg-gray-50 dark:bg-gray-900 py-3 sm:py-5">
+  <div class="px-4 mx-auto max-w-screen-2xl lg:px-12">
+      <div class="relative overflow-hidden bg-white shadow-md dark:bg-gray-800 sm:rounded-lg">
+          <div class="flex flex-col px-4 py-3 space-y-3 lg:flex-row lg:items-center lg:justify-between lg:space-y-0 lg:space-x-4">
+              <div class="flex items-center flex-1 space-x-4">
+                  <h5>
+                      <span class="text-gray-500">Role name: @name</span>
+                      <span class="dark:text-white"></span>
+
+                  </h5>
+                
+              </div>
+          
+   
+@using (Html.BeginForm())
+{
+    <p>
+        Find by name: @Html.TextBox("search_data")  
+        <input type="submit" value="Search" /></p>
+}
+
+
+          </div>
+          <div class="overflow-x-auto">
+
+              <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                  <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                      <tr>
+                         
+                          <th scope="col" class="px-4 py-3">First Name  </th>
+                       <th scope="col" class="px-4 py-3">Last Name  </th>
+                       <th scope="col" class="px-4 py-3">Email  </th>
+                           <th scope="col" class="px-4 py-3">Add/Remove</th>
+
+                      </tr>
+                  </thead>
+                  <tbody>
+                         @for (int i = 0; i < Model.Count; i++)
+            {
+                           
+                      <tr class="border-b dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700">
+                        
+                           <th  class="px-4 py-2">
+                             
+                              
+                               @Model[i].FirstName
+                          </th>
+                            <th  class="px-4 py-2">
+                             
+                              
+                               @Model[i].LastName
+                          </th>
+                          <th scope="row" class="flex items-center px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                             <input type="hidden" asp-for="@Model[i].UserId" />
+                    <input type="hidden" asp-for="@Model[i].UserName" />
+                              <label asp-for="@Model[i].IsSelected" class="font-medium text-gray-700 select-none">  @Model[i].UserName</label>
+                          </th>
+                         
+                        
+                             <td scope="col" class="px-4 py-3">
+                               <input asp-for="@Model[i].IsSelected" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                                
+                                </td>
+
+                                  
+                      </tr>
+                      
+                        }
+                  </tbody>
+              </table>
+           <nav class="" aria-label="Table navigation">
+             
+                
+              
+
+               <div class="px-4 py-3 bg-gray-50 text-right sm:px-6 float-right">
+                              
+                                <a asp-controller="Roles" asp-action="Index"  class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-blue-gray-900 hover:bg-blue-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Back to List</a>
+                            <button  type="submit" class="bg-gray-800 border border-transparent rounded-md shadow-sm py-2 px-4 inline-flex justify-center text-sm font-medium text-white hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">Save</button>
+                        
+                        </div>
+        
+   
+    
+
+              
+         
+
+  
+          </nav>
+      </div>
+  </div>
+  </div>
+
+  
+</section>
+</form>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
